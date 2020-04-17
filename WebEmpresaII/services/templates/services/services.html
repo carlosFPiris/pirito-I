@@ -1,0 +1,40 @@
+{% extends "core/base.html" %}
+{% load static  %}
+{% block title %} servicios{% endblock %}
+{% block content %} 
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">Services
+      <small>Subheading</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Services</li>
+    </ol>
+
+    <!-- Image Header -->
+    <img class="img-fluid rounded mb-4" src="{% static 'img/about1.jpg' %}" alt="">
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+    {% for service in services%}
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">{{service.title}}</h4>
+          <div class="card-body">
+            <p class="card-text"> {{ service.content }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+     {% endfor %}
+    </div>
+{% endblock %}
